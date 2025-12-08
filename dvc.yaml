@@ -1,0 +1,12 @@
+stages:
+  build_add_dataset:
+    cmd: python -m data.processing.build_dataset
+    deps:
+    - data/processing/build_dataset.py
+    - mongodump-JiraRepos_2023-03-07-16 00.archive
+    - mongodump-MiningDesignDecisions-lite.archive
+    outs:
+    - data/clean/add_clean.parquet
+    - data/processed/add_bert.pt
+    - data/processed/label2id.pt
+    - data/raw/add_raw.parquet

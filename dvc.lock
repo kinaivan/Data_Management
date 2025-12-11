@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  build_add_dataset:
+    cmd: python -m data.processing.build_dataset
+    deps:
+    - path: data/processing/build_dataset.py
+      hash: md5
+      md5: ccc7263c64141d184b48b1e184a3a53c
+      size: 6490
+    - path: mongodump-JiraRepos_2023-03-07-16 00.archive
+      hash: md5
+      md5: 177203dcd2da07e2f464de9adbf77e49
+      size: 7502732161
+    - path: mongodump-MiningDesignDecisions-lite.archive
+      hash: md5
+      md5: 273d40740b7b42641da66f2b317284c6
+      size: 2756900371
+    outs:
+    - path: data/clean/add_clean.parquet
+      hash: md5
+      md5: a2d3e219faf6cf26f4f2e16fac99581c
+      size: 3171643
+    - path: data/processed/add_bert.pt
+      hash: md5
+      md5: 269a49cd2d4d21008727dcb89bfee1f6
+      size: 25703771
+    - path: data/processed/label2id.pt
+      hash: md5
+      md5: 65fd27c001fce1f1839061b2a7b741b5
+      size: 868
+    - path: data/raw/add_raw.parquet
+      hash: md5
+      md5: 4622b83a59429f14ba0af1d124730503
+      size: 3523164
